@@ -38,11 +38,11 @@ jobs:
         with:
           context: .
           push: ${{ github.event_name == 'push' || github.event_name == 'workflow_dispatch' }}
-          tags: ghcr.io/interweave/staticwebapps:latest
+          tags: ghcr.io/interweaveapp/staticwebapps:latest
       - name: Build and push testing
         if: github.ref == 'refs/heads/test'
         uses: docker/build-push-action@v3
         with:
           context: .
           push: ${{ github.event_name == 'push' || github.event_name == 'workflow_dispatch' }}
-          tags: ghcr.io/interweave/staticwebapps:testing
+          tags: ghcr.io/interweaveapp/staticwebapps:testing
